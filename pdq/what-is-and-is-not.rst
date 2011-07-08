@@ -41,14 +41,16 @@ Is Not
 
 - A mix-and-match set of swappable components
 
-- Not burdened with pluggability at every turn before you even need to
+- Burdened with pluggability at every turn before you even need to
   have a plug
 
-- Not a content management system for publishing brochures to huge
+- Likewise, not components-everywhere-you-turn
+
+- A content management system for publishing brochures to huge
   public sites
 
-- Not for sophisticated document management with records archival
+- For sophisticated document management with records archival
 
-- Not for portals and integration
+- For portals and integration
 
-- Not enterprise-y
+- Enterprise-y

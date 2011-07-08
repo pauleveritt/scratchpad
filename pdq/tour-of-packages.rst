@@ -16,7 +16,7 @@ Forms               Deform
 Nice Forms          Balazs/Simons thing
 Schemas             Colander
 Content Types       Limone                  :doc:`content-types`
-App Management      Jove
+Site Management     Jove                    :doc:`site-management`
 Packaging           buildout
 Packaging           Private index
 Cataloging          repoze.catalog
@@ -35,7 +35,7 @@ Documentation       Sphinx/readthedocs
 Scaffolding         Paster Templates
 Functional Testing  WebTest
 CI                  Jenkins at Pylons
-Composing UIs       SiteLayouts             :doc:`sitelayouts`
+Composing UIs       SiteLayouts             :doc:`layouts`
 Admin UI            Bottlecap
 ==================  =====================   ======================
 

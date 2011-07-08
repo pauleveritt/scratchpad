@@ -14,7 +14,7 @@ idblib.indexedDB.onerror = function(e) {
     console.log(e);
 };
 
-idblib.indexedDB.open = function(dbname) {
+idblib.indexedDB.open = function(dbname, callback) {
     idblib.dbname = dbname;
 
     var request = indexedDB.open(dbname);
@@ -37,11 +37,11 @@ idblib.indexedDB.open = function(dbname) {
                 var store = db.createObjectStore(dbname,
                     {keyPath: "timeStamp"});
 
-                idblib.indexedDB.getAllTodoItems();
+                idblib.indexedDB.getAllTodoItems(callback);
             };
         }
         else {
-            idblib.indexedDB.getAllTodoItems();
+            idblib.indexedDB.getAllTodoItems(callback);
         }
     };
 
@@ -69,7 +69,7 @@ idblib.indexedDB.addItem = function(item) {
     };
 };
 
-idblib.indexedDB.deleteItem = function(id) {
+idblib.indexedDB.deleteItem = function(id, callback) {
     var db = idblib.indexedDB.db;
     var trans = db.transaction([idblib.dbname], IDBTransaction.READ_WRITE, 0);
     var store = trans.objectStore(idblib.dbname);
@@ -77,7 +77,7 @@ idblib.indexedDB.deleteItem = function(id) {
     var request = store.delete(id);
 
     request.onsuccess = function(e) {
-        idblib.indexedDB.getAllTodoItems();
+        idblib.indexedDB.getAllTodoItems(callback);
     };
 
     request.onerror = function(e) {
@@ -85,7 +85,7 @@ idblib.indexedDB.deleteItem = function(id) {
     };
 };
 
-idblib.indexedDB.getAllTodoItems = function() {
+idblib.indexedDB.getAllTodoItems = function(callback) {
     var todos = document.getElementById("todoItems");
     todos.innerHTML = "";
 
@@ -102,7 +102,7 @@ idblib.indexedDB.getAllTodoItems = function() {
         if (!cursor)
             return;
 
-        renderTodo(cursor.value);
+        callback(cursor.value);
         cursor.
         continue
         ();
