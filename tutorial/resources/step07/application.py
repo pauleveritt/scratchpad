@@ -1,8 +1,10 @@
 from pyramid.config import Configurator
 from paste.httpserver import serve
 
+from resources import bootstrap
+
 def main():
-    config = Configurator()
+    config = Configurator(root_factory=bootstrap)
     config.scan("views")
     config.scan("layout")
     config.add_static_view('static', 'static/',
