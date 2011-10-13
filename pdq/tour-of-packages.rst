@@ -24,6 +24,7 @@ Text indexing       repoze.pgtextindex
 DVCS                Git/GitHub
 Tagging             KARL's tagging
 Workflow            repoze.workflow
+Mailin		    repoze.postoffice
 Configuration       Paste/Pyramid .ini
 Migration           repoze.evolution
 Versioning          Shane's thing

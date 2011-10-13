@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>${company} - Departments</title>
+</head>
+<body>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/departments.html">Departments</a></li>
+    <li><a href="/people.html">People</a></li>
+    <li><a href="/projects.html">Projects</a></li>
+</ul>
+<h1>Departments</h1>
+<ul>
+    <li tal:repeat="department departments">
+        <a href="${department.name}">${department.title}</a>
+    </li>
+</ul>
+</body>
+</html>
