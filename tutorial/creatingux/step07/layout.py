@@ -2,7 +2,6 @@ from pyramid.decorator import reify
 from pyramid.events import subscriber
 from pyramid.events import BeforeRender
 from pyramid.renderers import get_renderer
-from pyramid.url import static_url
 
 class Layout(object):
     def __init__(self, context, request):
@@ -33,8 +32,7 @@ class Layout(object):
 
 @subscriber(BeforeRender)
 def add_renderer_globals(event):
-    system = event._system
-    request, context = system['request'], system['context']
+    request, context = event['request'], event['context']
     event['layout'] = Layout(context, request)
 
 # Dummy data

@@ -32,8 +32,7 @@ class Layout(object):
 
 @subscriber(BeforeRender)
 def add_renderer_globals(event):
-    system = event._system
-    request, context = system['request'], system['context']
+    request, context = event['request'], event['context']
     event['layout'] = Layout(context, request)
 
 # Dummy data
