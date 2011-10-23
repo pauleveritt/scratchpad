@@ -1,4 +1,4 @@
-<div metal:use-macro="layout.template">
+<div metal:use-macro="view.template">
     <div metal:fill-slot="content">
         <p>Home page content goes here.</p>
     </div>

@@ -5,11 +5,11 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       metal:define-macro="layout">
 <head>
-    <title>${layout.company_name} - ${page_title}</title>
+    <title>${view.company_name} - ${page_title}</title>
 </head>
 <body>
 <ul>
-    <li tal:repeat="menu layout.site_menu">
+    <li tal:repeat="menu view.site_menu">
         <tal:block tal:condition="menu.current">
             <span>${menu.title}</span>
         </tal:block>
@@ -18,7 +18,7 @@
         </tal:block>
     </li>
 </ul>
-<h1>${layout.company_name} - ${page_title}</h1>
+<h1>${view.company_name} - ${page_title}</h1>
 
 <div metal:define-slot="content">
 </div>
