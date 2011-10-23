@@ -1,14 +1,14 @@
 <html>
 <head>
-    <title>${company} - Home</title>
+    <title>Projector - Home</title>
 </head>
 <body>
 <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/departments.html">Departments</a></li>
-    <li><a href="/people.html">People</a></li>
-    <li><a href="/projects.html">Projects</a></li>
+    <li><a href="/about.html">About Projector</a></li>
+    <li><a href="/somecompany">Some Company</a></li>
+    <li><a href="/people">People</a></li>
 </ul>
-<h1>${company} - Home</h1>
+<h1>Projector - Home</h1>
 </body>
 </html>

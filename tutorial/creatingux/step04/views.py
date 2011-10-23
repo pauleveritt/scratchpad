@@ -2,29 +2,24 @@ from pyramid.view import view_config
 
 @view_config(renderer="index.pt")
 def index_view(request):
-    return {"company": COMPANY}
+    return {}
+
+@view_config(renderer="about.pt", name="about.html")
+def about_view(request):
+    return {}
 
 
-@view_config(renderer="departments.pt", name="departments.html")
-def departments_view(request):
-    return {"company": COMPANY, "departments": DEPARTMENTS}
+@view_config(renderer="company.pt", name="somecompany")
+def company_view(request):
+    return {"company": COMPANY, "projects": PROJECTS}
 
 
-@view_config(renderer="people.pt", name="people.html")
+@view_config(renderer="people.pt", name="people")
 def people_view(request):
     return {"company": COMPANY, "people": PEOPLE}
 
-@view_config(renderer="projects.pt", name="projects.html")
-def projects_view(request):
-    return {"company": COMPANY, "projects": PROJECTS}
-
 # Dummy data
 COMPANY = "ACME, Inc."
-
-DEPARTMENTS = [
-        {'name': 'marketing', 'title': 'Marketing'},
-        {'name': 'operations', 'title': 'Operations'},
-]
 
 PEOPLE = [
         {'name': 'sstanton', 'title': 'Susan Stanton'},
