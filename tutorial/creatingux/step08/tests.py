@@ -1,6 +1,22 @@
 import unittest
 
-class FunctionalTests(unittest.TestCase):
+import unittest
+from pyramid import testing
+
+class ProjectorUnitTests(unittest.TestCase):
+    def setUp(self):
+        request = testing.DummyRequest()
+        self.config = testing.setUp(request=request)
+
+    def tearDown(self):
+        testing.tearDown()
+
+    def test_index_view(self):
+        from views import Views
+        self.assertEqual(1, 1)
+
+        
+class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
         app = main()
