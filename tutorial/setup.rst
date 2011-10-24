@@ -9,3 +9,7 @@ Tutorial Setup
 - Change your path to ensure the virtualenv Python is first
 
 - Add env var for Chameleon template reload
+
+- Babel and friends
+
+- Debug toolbar

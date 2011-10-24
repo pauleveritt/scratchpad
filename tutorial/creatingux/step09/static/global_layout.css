@@ -11,12 +11,12 @@ body {
     background-color: lightgray;
 }
 
-#header ul {
+#header ul, #company_menu {
     margin-left: 1em;
     padding: 0;
 }
 
-#header li {
+#header li, #company_menu li {
     display: inline-block;
     margin-top: 1em;
     padding-right: 0.8em;

@@ -12,7 +12,6 @@ class ProjectorUnitTests(unittest.TestCase):
         testing.tearDown()
 
     def test_index_view(self):
-        from views import Views
         self.assertEqual(1, 1)
 
         

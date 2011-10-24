@@ -16,6 +16,11 @@ class GlobalLayout(object):
         return COMPANY
 
     @reify
+    def macros(self):
+        renderer = get_renderer("templates/macros.pt")
+        return renderer.implementation().macros
+
+    @reify
     def site_menu(self):
         new_menu = SITE_MENU[:]
         url = self.request.url
