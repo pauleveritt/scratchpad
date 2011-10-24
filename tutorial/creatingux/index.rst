@@ -34,6 +34,7 @@ usually needs to see something in order to understand and agree.
    step05/index
    step06/index
    step07/index
+   step08/index
 
 - Unit tests
 - Re-usable snippets
