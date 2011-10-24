@@ -2,6 +2,9 @@
 Tutorial: Pyramid for Humans
 ============================
 
+- Root folder
+
+
 - Minor models, enough to continue UX
 
 - Forms, content types, factories
