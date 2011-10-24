@@ -49,3 +49,9 @@ Running
 - python application.py
 
 - Open in browser
+
+Extra Credit
+============
+
+Discussion
+==========

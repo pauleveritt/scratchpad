@@ -19,10 +19,10 @@ def about_view(request):
             "page_title": "About"}
 
 
-@view_config(renderer="templates/company.pt", name="somecompany")
+@view_config(renderer="templates/company.pt", name="acme")
 def company_view(request):
     return {"layout": site_layout(),
-            "page_title": "Projects",
+            "page_title": COMPANY + " Projects",
             "company": COMPANY,
             "projects": PROJECTS}
 
@@ -34,11 +34,6 @@ def people_view(request):
 
 # Dummy data
 COMPANY = "ACME, Inc."
-
-DEPARTMENTS = [
-        {'name': 'marketing', 'title': 'Marketing'},
-        {'name': 'operations', 'title': 'Operations'},
-]
 
 PEOPLE = [
         {'name': 'sstanton', 'title': 'Susan Stanton'},

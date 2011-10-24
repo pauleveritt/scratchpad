@@ -22,4 +22,4 @@ Tutorial: Pyramid for Humans
 
   - Console scripts
 
-  
+- PyCharm

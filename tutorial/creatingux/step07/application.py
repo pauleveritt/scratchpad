@@ -4,7 +4,6 @@ from paste.httpserver import serve
 def main():
     config = Configurator()
     config.scan("views")
-    config.scan("layout")
     config.add_static_view('static', 'static/',
                            cache_max_age=86400)
     app = config.make_wsgi_app()

@@ -18,5 +18,5 @@ class FunctionalTests(unittest.TestCase):
         self.failUnless('autonomous' in res.body)
         res = self.testapp.get('/people', status=200)
         self.failUnless('Susan' in res.body)
-        res = self.testapp.get('/somecompany', status=200)
+        res = self.testapp.get('/acme', status=200)
         self.failUnless('Silly Slogans' in res.body)

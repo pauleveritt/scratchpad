@@ -10,7 +10,7 @@ def about_view(request):
     return {}
 
 
-@view_config(renderer="company.pt", name="somecompany")
+@view_config(renderer="company.pt", name="acme")
 def company_view(request):
     return {"company": COMPANY, "projects": PROJECTS}
 

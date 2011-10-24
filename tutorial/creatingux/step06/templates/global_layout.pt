@@ -5,7 +5,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       metal:define-macro="layout">
 <head>
-    <title>${view.company_name} - ${page_title}</title>
+    <title>Projector - ${page_title}</title>
 </head>
 <body>
 <ul>
@@ -18,7 +18,7 @@
         </tal:block>
     </li>
 </ul>
-<h1>${view.company_name} - ${page_title}</h1>
+<h1>${page_title}</h1>
 
 <div metal:define-slot="content">
 </div>

@@ -6,7 +6,7 @@
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about.html">About Projector</a></li>
-    <li><a href="/somecompany">Some Company</a></li>
+    <li><a href="/acme">ACME Inc.</a></li>
     <li><a href="/people">People</a></li>
 </ul>
 <h1>People</h1>

@@ -40,3 +40,8 @@ usually needs to see something in order to understand and agree.
 Models
 - Root "site" container
 - Per-department container
+
+To Do
+======
+
+- template -> global_layout
