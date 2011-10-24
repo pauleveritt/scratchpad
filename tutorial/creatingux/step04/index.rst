@@ -12,4 +12,18 @@ In this step we make mock up the structure of the site map::
 Goals
 =====
 
-- 
+Background
+==========
+
+Steps
+=====
+
+Running
+=======
+
+Extra Credit
+============
+
+Discussion
+==========
+

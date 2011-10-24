@@ -7,3 +7,22 @@ Functional Testing with WebTest
 - Test runner
 
 - How to run it
+
+Goals
+=====
+
+Background
+==========
+
+Steps
+=====
+
+Running
+=======
+
+Extra Credit
+============
+
+Discussion
+==========
+

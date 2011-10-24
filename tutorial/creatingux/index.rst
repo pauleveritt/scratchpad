@@ -24,24 +24,19 @@ The Workflow
 Many projects have a certain workflow, starting with a customer who
 usually needs to see something in order to understand and agree.
 
-- Step 01: Hello world in Pyramid
-- Step 02: Template testing with WebTest
-- Step 03: Hello world in Chameleon
-- Step 04: Skeleton views
-- Step 05: Making a main template
-- Step 06: View Classes and "Layouts"
-- Step 07: Publishing static resources
-- Step 08: JSON views
-- Step 09: Re-usable snippets
-- Step XX: Locale
-- Step XX: Unit tests
-- Step 10: Content-specific views
+.. toctree::
+   :maxdepth: 1
 
-Models
-- Root "site" container
-- Per-department container
+   step01/index
+   step02/index
+   step03/index
+   step04/index
+   step05/index
+   step06/index
+   step07/index
 
-To Do
-======
-
-- template -> global_layout
+- Unit tests
+- Re-usable snippets
+- Locale
+- Unit tests
+- Content-specific views
