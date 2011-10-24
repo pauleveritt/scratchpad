@@ -9,27 +9,28 @@ def site_layout():
 
 @view_config(renderer="templates/index.pt")
 def index_view(request):
-    return {"company": COMPANY, "layout": site_layout(),
+    return {"layout": site_layout(),
             "page_title": "Home"}
 
 
-@view_config(renderer="templates/departments.pt",
-             name="departments.html")
-def departments_view(request):
-    return {"company": COMPANY, "layout": site_layout(),
-            "page_title": "Departments", "departments": DEPARTMENTS}
+@view_config(renderer="templates/about.pt", name="about.html")
+def about_view(request):
+    return {"layout": site_layout(),
+            "page_title": "About"}
 
 
-@view_config(renderer="templates/people.pt", name="people.html")
+@view_config(renderer="templates/company.pt", name="somecompany")
+def company_view(request):
+    return {"layout": site_layout(),
+            "page_title": "Projects",
+            "company": COMPANY,
+            "projects": PROJECTS}
+
+
+@view_config(renderer="templates/people.pt", name="people")
 def people_view(request):
-    return {"company": COMPANY, "layout": site_layout(),
-            "page_title": "People", "people": PEOPLE}
-
-
-@view_config(renderer="templates/projects.pt", name="projects.html")
-def projects_view(request):
-    return {"company": COMPANY, "layout": site_layout(),
-            "page_title": "Projects", "projects": PROJECTS}
+    return {"layout": site_layout(),
+            "page_title": "People", "company": COMPANY, "people": PEOPLE}
 
 # Dummy data
 COMPANY = "ACME, Inc."

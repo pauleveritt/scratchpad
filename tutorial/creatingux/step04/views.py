@@ -4,6 +4,7 @@ from pyramid.view import view_config
 def index_view(request):
     return {}
 
+
 @view_config(renderer="about.pt", name="about.html")
 def about_view(request):
     return {}
