@@ -24,6 +24,13 @@ class LayoutUnitTests(unittest.TestCase):
         inst = self._makeOne()
         self.assertEqual(inst.global_template.__class__, Macro)
 
+    def test_global_macros(self):
+        from chameleon.zpt.template import Macros
+
+        inst = self._makeOne()
+        self.assertEqual(inst.global_macros.__class__, Macros)
+
+
     def test_company_name(self):
         from dummy_data import COMPANY
 

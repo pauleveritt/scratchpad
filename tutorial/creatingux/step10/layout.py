@@ -16,7 +16,7 @@ class Layouts(object):
         return COMPANY
 
     @reify
-    def macros(self):
+    def global_macros(self):
         renderer = get_renderer("templates/macros.pt")
         return renderer.implementation().macros
 
