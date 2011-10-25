@@ -8,10 +8,9 @@ from dummy_data import PROJECTS
 
 from layout import GlobalLayout
 
-class Views(GlobalLayout):
+class ProjectorViews(GlobalLayout):
 
-    def __init__(self, context, request):
-        self.context = context
+    def __init__(self, request):
         self.request = request
 
     @view_config(renderer="templates/index.pt")

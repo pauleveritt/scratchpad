@@ -1,21 +1,30 @@
 import unittest
 
-import unittest
-from pyramid import testing
+from pyramid.testing import DummyRequest
+from pyramid.testing import setUp
+from pyramid.testing import tearDown
 
-class ProjectorUnitTests(unittest.TestCase):
+class ProjectorViewsUnitTests(unittest.TestCase):
     def setUp(self):
-        request = testing.DummyRequest()
-        self.config = testing.setUp(request=request)
+        request = DummyRequest()
+        self.config = setUp(request=request)
 
     def tearDown(self):
-        testing.tearDown()
+        tearDown()
+
+    def _makeOne(self, request):
+        from .views import ProjectorViews
+
+        inst = ProjectorViews(request)
+        return inst
 
     def test_index_view(self):
-        from views import Views
-        self.assertEqual(1, 1)
+        request = DummyRequest()
+        inst = self._makeOne(request)
+        result = inst.index_view()
+        self.assertEqual(result['page_title'], 'Home')
 
-        
+
 class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main

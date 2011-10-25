@@ -5,7 +5,7 @@ from resources import Folder
 from resources import Document
 
 
-class Views(object):
+class ProjectorViews(object):
     def __init__(self, context, request):
         self.context = context
         self.request = request
