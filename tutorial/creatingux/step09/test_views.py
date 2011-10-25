@@ -50,7 +50,7 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         result = inst.updates_view()
         self.assertEqual(len(result), 5)
 
-class ProjectorFunctionalTests(unittest.TestCase):
+class ProjectorProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
         app = main()

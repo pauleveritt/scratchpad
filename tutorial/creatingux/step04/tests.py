@@ -23,7 +23,7 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         self.assertEqual(result["company"], "ACME, Inc.")
         self.assertEqual(len(result["people"]), 2)
 
-class FunctionalTests(unittest.TestCase):
+class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
         app = main()

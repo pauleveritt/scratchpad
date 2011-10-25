@@ -5,11 +5,8 @@ Tutorial: Pyramid for Humans
 To Do
 =====
 
-- Split view classes and layouts into different steps
-
 - Split resources/step01 into 2 steps
 
-- Introduce unit testing in web testing
 
 Contents
 ========
