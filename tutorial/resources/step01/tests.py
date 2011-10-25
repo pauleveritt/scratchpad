@@ -9,4 +9,12 @@ class FunctionalTests(unittest.TestCase):
 
     def test_it(self):
         res = self.testapp.get('/', status=200)
-        self.failUnless('Home' in res.body)
+        self.failUnless('SiteFolder' in res.body)
+        res = self.testapp.get('/folder1', status=200)
+        self.failUnless('Folder' in res.body)
+        res = self.testapp.get('/doc1', status=200)
+        self.failUnless('Document' in res.body)
+        res = self.testapp.get('/doc2', status=200)
+        self.failUnless('Document' in res.body)
+        res = self.testapp.get('/folder1/doc1', status=200)
+        self.failUnless('Document' in res.body)

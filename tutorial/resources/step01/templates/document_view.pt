@@ -1,1 +1,3 @@
-<p>This is a ${content_type}</p>
+<div>
+    <h2>Document Title: ${context.title}</h2>
+</div>

@@ -9,13 +9,13 @@ Tutorial: Pyramid for Humans
 
 - Forms, content types, factories
 
-- Persistence
-
-- Cataloging
-
 - Security
 
 - Multilingual
+
+- Persistence
+
+- Cataloging
 
 - Grown up development
 
