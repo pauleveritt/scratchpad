@@ -24,8 +24,27 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         result = inst.index_view()
         self.assertEqual(result['page_title'], 'Home')
 
+    def test_about_view(self):
+        request = DummyRequest()
+        inst = self._makeOne(request)
+        result = inst.about_view()
+        self.assertEqual(result['page_title'], 'About')
 
-class ProjectorFunctionalTests(unittest.TestCase):
+    def test_company_view(self):
+        request = DummyRequest()
+        inst = self._makeOne(request)
+        result = inst.company_view()
+        self.assertEqual(result["page_title"], "ACME, Inc. Projects")
+        self.assertEqual(len(result["projects"]), 2)
+
+    def test_people_view(self):
+        request = DummyRequest()
+        inst = self._makeOne(request)
+        result = inst.people_view()
+        self.assertEqual(result["page_title"], "People")
+        self.assertEqual(len(result["people"]), 2)
+
+class FunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
         app = main()

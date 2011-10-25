@@ -4,9 +4,9 @@ from dummy_data import COMPANY
 from dummy_data import PEOPLE
 from dummy_data import PROJECTS
 
-from layout import GlobalLayout
+from layout import Layouts
 
-class ProjectorViews(GlobalLayout):
+class ProjectorViews(Layouts):
 
     def __init__(self, request):
         self.request = request
