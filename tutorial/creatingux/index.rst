@@ -37,4 +37,5 @@ usually needs to see something in order to understand and agree.
    step08/index
    step09/index
    step10/index
+   step11/index
 

@@ -21,9 +21,10 @@ class ProjectorViewsUnitTests(unittest.TestCase):
     def test_index_view(self):
         request = DummyRequest()
         inst = self._makeOne(request)
-        self.assertEqual(1, 1)
+        result = inst.index_view()
+        self.assertEqual(result['page_title'], 'Home')
 
-        
+
 class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main

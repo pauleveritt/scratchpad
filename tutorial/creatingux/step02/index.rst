@@ -1,6 +1,6 @@
-===============================
-Functional Testing with WebTest
-===============================
+===========================
+Unit and Functional Testing
+===========================
 
 - Same application.py
 

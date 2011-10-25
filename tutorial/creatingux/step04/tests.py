@@ -1,5 +1,28 @@
 import unittest
 
+class ProjectorViewsUnitTests(unittest.TestCase):
+    def test_hello_view(self):
+        from views import index_view
+        result = index_view({})
+        self.assertEqual(len(result.keys()), 0)
+
+    def test_about_view(self):
+        from views import about_view
+        result = about_view({})
+        self.assertEqual(len(result.keys()), 0)
+
+    def test_company_view(self):
+        from views import company_view
+        result = company_view({})
+        self.assertEqual(result["company"], "ACME, Inc.")
+        self.assertEqual(len(result["projects"]), 2)
+
+    def test_people_view(self):
+        from views import people_view
+        result = people_view({})
+        self.assertEqual(result["company"], "ACME, Inc.")
+        self.assertEqual(len(result["people"]), 2)
+
 class FunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main

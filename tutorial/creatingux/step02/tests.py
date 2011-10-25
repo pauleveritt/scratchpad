@@ -1,5 +1,11 @@
 import unittest
 
+class ProjectorViewsUnitTests(unittest.TestCase):
+    def test_hello_world(self):
+        from application import hello_world
+        result = hello_world({})
+        self.assertEqual(result.body, 'hello!')
+
 class FunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
