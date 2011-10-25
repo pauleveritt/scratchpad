@@ -9,12 +9,12 @@ class ProjectorViewsUnitTests(unittest.TestCase):
 
         request = DummyRequest()
         title = "Dummy Context"
-        context = DummyResource(title=title)
+        context = DummyResource(title=title, __name__='dummy')
         inst = ProjectorViews(context, request)
         result = inst.default_view()
-        self.failUnless('SiteFolder' in result.body)
-        self.failUnless(title in result.body)
-
+        self.assertEqual(result['page_title'], 'Dummy Context')
+        self.assertEqual(result['parent_title'], 'None')
+        self.assertEqual(result['name'], 'dummy')
 
 class FunctionalTests(unittest.TestCase):
     def setUp(self):
@@ -27,5 +27,5 @@ class FunctionalTests(unittest.TestCase):
 
     def test_it(self):
         res = self.testapp.get('/', status=200)
-        self.failUnless('SiteFolder' in res.body)
+        self.failUnless('Site Folder' in res.body)
         self.failUnless('Projector Site' in res.body)
