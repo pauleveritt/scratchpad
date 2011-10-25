@@ -4,7 +4,7 @@ from pyramid.decorator import reify
 from dummy_data import COMPANY
 from dummy_data import SITE_MENU
 
-class GlobalLayout(object):
+class Layouts(object):
 
     @reify
     def global_template(self):
