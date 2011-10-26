@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# jslibs documentation build configuration file
+# tutorial documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its containing
 # dir.
@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General substitutions.
-project = 'jslibs'
+project = 'Pyramid for Humans'
 copyright = '2011, Agendaless Consulting <http://agendaless.com>'
 
 # The default replacements for |version| and |release|, also used in various
@@ -171,7 +171,7 @@ html_last_updated_fmt = '%b %d, %Y'
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'jslibs'
+htmlhelp_basename = 'pyramidforhumans'
 
 
 # Options for LaTeX output
@@ -187,7 +187,7 @@ htmlhelp_basename = 'jslibs'
 # (source start file, target name, title,
 #  author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'jslibs.tex', 'jslibs Documentation',
+  ('index', 'pyramidforhumans.tex', 'Pyramid for Humans Documentation',
    'Pylons Developers', 'manual'),
 ]
 

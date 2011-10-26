@@ -1,9 +1,9 @@
-======================
-Hello World in Pyramid
-======================
+===============================
+Step 01: Hello World in Pyramid
+===============================
 
-What's the simplest way to get started? A single-file module. No
-packages, imports, ``setup.py``, or other machinery.
+What's the simplest way to get started in Pyramid? A single-file module.
+No packages, imports, ``setup.py``, or other machinery.
 
 Goals
 =====
@@ -11,6 +11,13 @@ Goals
 - Get Pyramid pixels on the screen as easily as possible
 
 - Use that as a well-understood base for adding each unit of complexity
+
+Objectives
+==========
+
+- Create a module with a view that acts as an HTTP server
+
+- Visit the URL in your browser
 
 Background
 ==========
@@ -21,11 +28,13 @@ little, the only things you have to worry about are *your things*.
 
 Pyramid is special because it can act as a single-file module
 microframework. You have a single Python file that can be executed
-directly by Python. But Pyramid also scales to the larges of
+directly by Python. But Pyramid also scales to the largest of
 applications.
 
 Steps
 =====
+
+#. Make sure you have followed the steps in :doc:`../../setup`.
 
 #. ``mkdir creatingux; cd creatingux``
 
@@ -33,26 +42,35 @@ Steps
 
 #. Copy the following into ``step01/application.py``:
 
+   .. literalinclude:: application.py
+      :linenos:
 
+#. ``python application.py``
 
-- A "view" as a function
+#. Make sure you have followed the steps in :doc:`../../setup`.
 
-- It returns a string
-
-Running
-=======
-
-- Add env27/bin to your path
-
-- cd to step01
-
-- python application.py
-
-- Open in browser
+#. Open ``http://127.0.0.1:8080/`` in your browser.
 
 Extra Credit
 ============
 
-Discussion
-==========
+#. What happens if you return a string of HTML? A sequence of integers?
+
+#. Put something invalid, such as ``print xyz``, in the view function.
+   Kill your ``python application.py`` and restart,
+   then reload your browser. See the exception in the console?
+
+Analysis
+========
+
+This single-file module does quite a bit for so few lines,
+thus making it spiritually similar to microframeworks. A view function
+is added to the configuration. When called, the view returns a response.
+
+
+Open Discussion
+===============
+
+- Background on megaframeworks, microframeworks, and Pyramid's opinion
+  thereof
 
