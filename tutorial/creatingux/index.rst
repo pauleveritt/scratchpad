@@ -36,7 +36,7 @@ Contents
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    step01/index
    step02/index

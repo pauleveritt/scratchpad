@@ -44,7 +44,13 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         self.assertEqual(result["page_title"], "People")
         self.assertEqual(len(result["people"]), 2)
 
-class ProjectorFunctionalTests(unittest.TestCase):
+    def test_updates_view(self):
+        request = DummyRequest()
+        inst = self._makeOne(request)
+        result = inst.updates_view()
+        self.assertEqual(len(result), 5)
+
+class ProjectorProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
         app = main()
