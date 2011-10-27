@@ -7,7 +7,7 @@
 <head>
     <title>Projector - ${page_title}</title>
     <link rel="stylesheet" href="/static/global_layout.css"/>
-    <script src="/static/jquery-1.6.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script src="/static/global_layout.js"></script>
 </head>
 <body>
