@@ -60,5 +60,3 @@ class ProjectorFunctionalTests(unittest.TestCase):
         self.failUnless('Susan' in res.body)
         res = self.testapp.get('/acme', status=200)
         self.failUnless('Silly Slogans' in res.body)
-        res = self.testapp.get('/updates.json', status=200)
-        self.failUnless('888' in res.body)

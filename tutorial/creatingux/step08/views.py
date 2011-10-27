@@ -31,14 +31,3 @@ class ProjectorViews(Layouts):
     def people_view(self):
         return {"page_title": "People", "people": PEOPLE}
 
-    @view_config(renderer="json", name="updates.json")
-    def updates_view(self):
-        return [
-            randint(0,100),
-            randint(0,100),
-            randint(0,100),
-            randint(0,100),
-            888,
-        ]
-
-

@@ -7,8 +7,6 @@
 <head>
     <title>Projector - ${page_title}</title>
     <link rel="stylesheet" href="/static/global_layout.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script src="/static/global_layout.js"></script>
 </head>
 <body>
 <div id="header">
@@ -22,11 +20,6 @@
             </tal:block>
         </li>
     </ul>
-</div>
-<div id="sidebar">
-    <h2>Updates</h2>
-    <ul></ul>
-    <p><a href="#">reload</a></p>
 </div>
 <div id="main"><h1>${page_title}</h1>
 

@@ -28,22 +28,3 @@ body {
 #main {
     margin: 2em;
 }
-
-#sidebar {
-    float:right;
-    width: 300px;
-    border-left: solid 2px gray;
-    border-bottom:  solid 2px gray;
-    padding-left: 10px;
-}
-
-#sidebar ul {
-    height: 100px;
-}
-#sidebar h2 {
-    text-align: center;
-}
-
-#sidebar p {
-    text-align: center;
-}

@@ -9,6 +9,11 @@ the rest of the Pyramid architecture.
 In this step we add a box to ach screen which fetches, format,
 and re-fetches site news updates.
 
+.. note::
+
+   Our templates will include jQuery from the Google CDN.
+
+
 Goals
 =====
 
