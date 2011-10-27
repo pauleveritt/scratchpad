@@ -4,7 +4,7 @@ from dummy_data import COMPANY
 from dummy_data import PEOPLE
 from dummy_data import PROJECTS
 
-from layout import Layouts
+from layouts import Layouts
 
 class ProjectorViews(Layouts):
 

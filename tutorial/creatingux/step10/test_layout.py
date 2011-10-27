@@ -13,7 +13,7 @@ class LayoutUnitTests(unittest.TestCase):
         tearDown()
 
     def _makeOne(self):
-        from layout import Layouts
+        from layouts import Layouts
 
         inst = Layouts()
         return inst

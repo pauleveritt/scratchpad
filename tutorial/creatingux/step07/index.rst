@@ -29,7 +29,8 @@ Goals
 Objectives
 ==========
 
-- Make an abstract base class (no ``__init__``) in a ``layout.py`` module
+- Make an abstract base class (no ``__init__``) in a ``layouts.py``
+  module
 
 - Each supported main template is its own property on that ``Layouts``
   class
@@ -52,6 +53,11 @@ Steps
 #. Copy the following into ``step07/views.py``:
 
    .. literalinclude:: views.py
+      :linenos:
+
+#. Copy the following into ``step07/layouts.py``:
+
+   .. literalinclude:: layouts.py
       :linenos:
 
 #. Copy the following into ``step07/dummy_data.py``:
@@ -90,26 +96,43 @@ Steps
       :language: html
       :linenos:
 
-#. Copy the following into ``step07/tests.py``:
+#. Copy the following into ``step07/test_views.py``:
 
-   .. literalinclude:: tests.py
+   .. literalinclude:: test_views.py
       :linenos:
 
-#. ``$ nosetests`` should report running 5 tests.
+#. Copy the following into ``step07/test_layout.py``:
+
+   .. literalinclude:: test_layout.py
+      :linenos:
+
+#. ``$ nosetests`` should report running 8 tests.
 
 #. ``$ python application.py``
 
 #. Open ``http://127.0.0.1:8080/`` in your browser.
 
+Extra Credit
+============
+
+#. How might we support multiple layouts? Give it a try.
 
 Analysis
 ========
 
-Anti-goal: pluggability.
-
-Extra Credit
-============
+One might start thinking that layouts shouldn't be hardwired. You
+should be able to make a layout (template and template API) and
+register it. Views could then grab the one they want,
+perhaps from a dictionary. Perhaps even support theme switching. Such
+pluggability is an *anti-goal*. Custom UX projects should specifically
+make and name what they create.
 
 Discussion
 ==========
 
+- Is such a pattern really needed?
+
+- Would a UX developer want to know that a property came from the
+  layout instead of the view?
+
+- How does this relate to the idea of a "theme"?
