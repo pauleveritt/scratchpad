@@ -36,18 +36,16 @@ Steps
 
 #. Make sure you have followed the steps in :doc:`../../setup`.
 
-#. ``mkdir creatingux; cd creatingux``
+#. ``$ mkdir creatingux; cd creatingux``
 
-#. ``mkdir step01; cd step01``
+#. ``$ mkdir step01; cd step01``
 
 #. Copy the following into ``step01/application.py``:
 
    .. literalinclude:: application.py
       :linenos:
 
-#. ``python application.py``
-
-#. Make sure you have followed the steps in :doc:`../../setup`.
+#. ``$ python application.py``
 
 #. Open ``http://127.0.0.1:8080/`` in your browser.
 

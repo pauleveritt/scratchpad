@@ -11,3 +11,5 @@ Since this is a tutorial for the Plone Conference,
 we are choosing a scenario that plays to Pyramid's strengths in
 content-style applications. Namely, a hierarchical project management
 system where you can assign tasks to teams.
+
+For the purposes of this tutorial, the application is named *Projector.*
