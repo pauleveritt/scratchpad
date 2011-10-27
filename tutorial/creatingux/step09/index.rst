@@ -13,7 +13,6 @@ and re-fetches site news updates.
 
    Our templates will include jQuery from the Google CDN.
 
-
 Goals
 =====
 
@@ -31,84 +30,109 @@ Objectives
 Steps
 =====
 
-#. ``$ cd ../creatingux; mkdir step08; cd step08``
+#. ``$ cd ../creatingux; mkdir step09; cd step09``
 
-#. (Unchanged) Copy the following into ``step08/application.py``:
+#. Copy the following into ``step09/application.py``:
 
    .. literalinclude:: application.py
       :linenos:
 
-#. Copy the following into ``step08/views.py``:
+#. ``$ mkdir static``
+
+#. Copy the following into ``step09/static/global_layout.css``:
+
+   .. literalinclude:: static/global_layout.css
+      :language: css
+      :linenos:
+
+#. Copy the following into ``step09/static/global_layout.js``:
+
+   .. literalinclude:: static/global_layout.js
+      :language: js
+      :linenos:
+
+#. Copy the following into ``step09/views.py``:
 
    .. literalinclude:: views.py
       :linenos:
 
-#. Copy the following into ``step08/layouts.py``:
+#. Copy the following into ``step09/layouts.py``:
 
    .. literalinclude:: layouts.py
       :linenos:
 
-#. Copy the following into ``step08/dummy_data.py``:
+#. Copy the following into ``step09/dummy_data.py``:
 
    .. literalinclude:: dummy_data.py
       :linenos:
 
 #. Copy the following "global template" into
-   ``step08/templates/global_layout.pt``:
+   ``step09/templates/global_layout.pt``:
 
    .. literalinclude:: templates/global_layout.pt
       :language: html
       :linenos:
 
-#. Copy the following into ``step08/templates/index.pt``:
+#. Copy the following into ``step09/templates/index.pt``:
 
    .. literalinclude:: templates/index.pt
       :language: html
       :linenos:
 
-#. Copy the following into ``step08/templates/about.pt``:
+#. Copy the following into ``step09/templates/about.pt``:
 
    .. literalinclude:: templates/about.pt
       :language: html
       :linenos:
 
-#. Copy the following into ``step08/templates/company.pt``:
+#. Copy the following into ``step09/templates/company.pt``:
 
    .. literalinclude:: templates/company.pt
       :language: html
       :linenos:
 
-#. Copy the following into ``step08/templates/people.pt``:
+#. Copy the following into ``step09/templates/people.pt``:
 
    .. literalinclude:: templates/people.pt
       :language: html
       :linenos:
 
-#. Copy the following into ``step08/test_views.py``:
+#. Copy the following into ``step09/test_views.py``:
 
    .. literalinclude:: test_views.py
       :linenos:
 
-#. Copy the following into ``step08/test_layout.py``:
+#. Copy the following into ``step09/test_layout.py``:
 
    .. literalinclude:: test_layout.py
       :linenos:
 
-#. ``$ nosetests`` should report running 8 tests.
+#. ``$ nosetests`` should report running 9 tests.
 
 #. ``$ python application.py``
 
 #. Open ``http://127.0.0.1:8080/`` in your browser.
 
-Analysis
-========
-
 Extra Credit
 ============
 
+#. Rather than a static random dictionary, make a mutable global that
+   gets appended to on each request, showing the time. Each request
+   adds another item to the list.
+
+#. Can WebTest provide any functional testing for AJAX?
+
 Analysis
 ========
+
+The JSON view is pretty fun. It looks very similar to our other views,
+which is good. In fact, the whole pattern of simply returning data from
+your view, and letting the machinery pass it into a renderer,
+provides consistency and simplicity. Plus, tests are a lot easier to
+write.
 
 Discussion
 ==========
 
+- How do other systems (Zope2, Zope3, Plone, Django,
+  Pylons 1) approach this?

@@ -41,6 +41,7 @@ Steps
 #. Copy the following into ``step08/static/global_layout.css``:
 
    .. literalinclude:: static/global_layout.css
+      :language: css
       :linenos:
 
 #. Copy the following into ``step08/views.py``:
