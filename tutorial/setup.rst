@@ -32,17 +32,20 @@ Steps
 
 #. Open a shell window and ``cd`` to a working directory.
 
-#. ``mkdir tutorial_workspace; cd tutorial_workspace``
+#. ``$ mkdir tutorial_workspace; cd tutorial_workspace``
 
-#. ``virtualenv --no-site-packages venv``
+#. ``$ virtualenv --no-site-packages venv``
 
-#. ``export PATH=/path/to/tutorial_workspace/bin:$PATH``
+#. ``$ export PATH=/path/to/tutorial_workspace/bin:$PATH``
 
-#. ``which easy_install``
+#. ``$ which easy_install``
 
    This should report the ``easy_install`` from ``venv/bin``.
 
-#. ``easy_install pyramid WebTest nose``
+#. ``$ easy_install pyramid WebTest nose``
+
+#. ``$ export PYRAMID_RELOAD_TEMPLATES=1`` lets you edit templates and
+   not have to restart your Pyramid application.
 
 
 Code Examples

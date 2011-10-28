@@ -16,7 +16,7 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         self.failUnless(title in result.body)
 
 
-class FunctionalTests(unittest.TestCase):
+class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
 

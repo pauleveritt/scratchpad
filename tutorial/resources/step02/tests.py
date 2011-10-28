@@ -16,7 +16,7 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         self.assertEqual(result['parent_title'], 'None')
         self.assertEqual(result['name'], 'dummy')
 
-class FunctionalTests(unittest.TestCase):
+class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
 

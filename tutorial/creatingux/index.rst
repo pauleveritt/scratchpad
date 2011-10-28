@@ -48,5 +48,4 @@ Contents
    step08/index
    step09/index
    step10/index
-   step11/index
 
