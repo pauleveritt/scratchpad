@@ -34,7 +34,7 @@ Steps
    ``$ export PYRAMID_RELOAD_TEMPLATES=1`` lets you edit templates and
    not have to restart your Pyramid application.
 
-#. ``$ cd ../creatingux; mkdir step03; cd step03``
+#. ``$ cd ../../creatingux; mkdir step03; cd step03``
 
 #. Copy the following into ``step03/application.py``:
 
