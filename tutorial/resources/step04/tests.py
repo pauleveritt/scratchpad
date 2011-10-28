@@ -39,6 +39,24 @@ class ProjectorViewsUnitTests(unittest.TestCase):
         result = inst.document_view()
         self.assertEqual(result, {})
 
+    def test_add_folder_view(self):
+        request=DummyRequest(folder_title='New Folder')
+        context = DummySite()
+        inst = self._makeOne(context, request)
+        result = inst.site_view()
+        self.assertEqual(len(result['children']), 6)
+        self.assertEqual(result[5].title,'New Folder')
+        # XXX Should I do assertEqual, failUnless, etc.
+        # XXX What's the right way to test the redirect?
+
+    def test_add_document_view(self):
+        request=DummyRequest(folder_title='New Document')
+        context = DummySite()
+        inst = self._makeOne(context, request)
+        result = inst.site_view()
+        self.assertEqual(len(result['children']), 6)
+        self.assertEqual(result[5].title,'New Document')
+
 class ProjectorFunctionalTests(unittest.TestCase):
     def setUp(self):
         from application import main
