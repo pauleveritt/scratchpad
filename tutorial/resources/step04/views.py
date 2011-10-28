@@ -30,8 +30,9 @@ class ProjectorViews(object):
         name = str(randint(0,999999))
         new_folder = Folder(name, self.context, title)
         self.context[name] = new_folder
+
         # Redirect to the new folder
-        url = '/' + name
+        url = self.request.resource_url(new_folder)
         return HTTPFound(location=url)
 
     @view_config(name="add_document", context=SiteFolder)
@@ -41,8 +42,9 @@ class ProjectorViews(object):
         name = str(randint(0,999999))
         new_document = Document(name, self.context, title)
         self.context[name] = new_document
+
         # Redirect to the new document
-        url = '/' + name
+        url = self.request.resource_url(new_document)
         return HTTPFound(location=url)
 
     @view_config(renderer="templates/document_view.pt",

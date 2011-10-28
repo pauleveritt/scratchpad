@@ -15,6 +15,7 @@ class Document(object):
         self.__parent__ = parent
         self.title = title
 
+root = SiteFolder('', None, 'Projector Site')
 
 def bootstrap(request):
     # Let's make:
@@ -23,7 +24,6 @@ def bootstrap(request):
     #   doc2
     #   folder1/
     #      doc1
-    root = SiteFolder('', None, 'Projector Site')
     doc1 = Document('doc1', root, 'Document 01')
     root['doc1'] = doc1
     doc2 = Document('doc2', root, 'Document 02')
