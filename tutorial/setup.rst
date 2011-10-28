@@ -9,7 +9,7 @@ extra packages.
 
 .. note::
 
-   Windows users will need to adopt the Unix-isms below to match
+   Windows users will need to adapt the Unix-isms below to match
    their environment.
 
 Our directory layout will look as follows::
@@ -44,8 +44,6 @@ Steps
 
 #. ``easy_install pyramid WebTest nose``
 
-
-XXX CHAMELEON_RELOAD, should it work outside paste?
 
 Code Examples
 =============
