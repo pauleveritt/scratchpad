@@ -17,7 +17,13 @@ class Document(object):
 
 
 def bootstrap(request):
-    root = SiteFolder('', None, 'Root Folder')
+    # Let's make:
+    # /
+    #   doc1
+    #   doc2
+    #   folder1/
+    #      doc1
+    root = SiteFolder('', None, 'Projector Site')
     doc1 = Document('doc1', root, 'Document 01')
     root['doc1'] = doc1
     doc2 = Document('doc2', root, 'Document 02')
