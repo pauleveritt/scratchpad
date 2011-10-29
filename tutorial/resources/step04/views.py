@@ -1,5 +1,6 @@
 from random import randint
 
+from pyramid.decorator import reify
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 
@@ -18,16 +19,24 @@ class ProjectorViews(object):
     def site_view(self):
         return {"children": self.context.values()}
 
+    @reify
+    def parent_info(self):
+        parent = self.context.__parent__
+        parent_url = self.request.resource_url(parent)
+        return {
+            'title': parent.title,
+            'url': parent_url}
+
     @view_config(renderer="templates/folder_view.pt",
                  context=Folder)
     def folder_view(self):
         return {"children": self.context.values()}
 
-    @view_config(name="add_folder", context=SiteFolder)
-    def add_folder(self):
+    @view_config(name="add_folder", context=Folder)
+    def add_folder_view(self):
         # Make a new Folder
         title = self.request.POST['folder_title']
-        name = str(randint(0,999999))
+        name = str(randint(0, 999999))
         new_folder = Folder(name, self.context, title)
         self.context[name] = new_folder
 
@@ -35,11 +44,11 @@ class ProjectorViews(object):
         url = self.request.resource_url(new_folder)
         return HTTPFound(location=url)
 
-    @view_config(name="add_document", context=SiteFolder)
-    def add_document(self):
+    @view_config(name="add_document", context=Folder)
+    def add_document_view(self):
         # Make a new Document
         title = self.request.POST['document_title']
-        name = str(randint(0,999999))
+        name = str(randint(0, 999999))
         new_document = Document(name, self.context, title)
         self.context[name] = new_document
 
