@@ -28,7 +28,7 @@ Objectives
 Steps
 =====
 
-#. ``$ cd ../creatingux; mkdir step02; cd step02``
+#. ``$ cd ../../creatingux; mkdir step02; cd step02``
 
    This ensures that you make the next directory in the right location.
 

@@ -31,7 +31,7 @@ Objectives
 Steps
 =====
 
-#. ``$ cd ../creatingux; mkdir step05; cd step05``
+#. ``$ cd ../../creatingux; mkdir step05; cd step05``
 
 #. (Unchanged) Copy the following into ``step05/application.py``:
 
