@@ -13,8 +13,6 @@ class ProjectorViews(object):
     def site_view(self):
         schema = Person()
         myform = Form(schema, buttons=('submit',))
-        form = myform.render()
-        print form
 
-        return {"form": form}
+        return {"form": myform.render()}
 
