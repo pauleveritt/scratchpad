@@ -19,19 +19,21 @@ class ProjectorViews(object):
     def site_view(self):
         schema = Person()
         myform = Form(schema, buttons=('submit',))
-        values = None
 
         if 'submit' in self.request.POST:
             controls = self.request.POST.items()
             try:
                 appstruct = myform.validate(controls)
-                values = {
-                    "name": appstruct['name'],
-                    "shoe_size": appstruct['shoe_size'],
-                    }
-                return {"form": myform.render(), "values": values}
             except ValidationFailure, e:
-                return {'form':e.render(), "values": values}
+                return {'form':e.render(), 'values': False}
+            # Process the valid form data, do some work
+            values = {
+                "name": appstruct['name'],
+                "shoe_size": appstruct['shoe_size'],
+                }
+            return {"form": myform.render(), "values": values}
 
+        # We are a GET not a POST
+        values = None
         return {"form": myform.render(), "values": values}
 

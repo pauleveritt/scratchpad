@@ -22,6 +22,25 @@ class ProjectorFunctionalTests(unittest.TestCase):
         from webtest import TestApp
         self.testapp = TestApp(app)
 
-    def test_it(self):
+    def test_GET(self):
+        # Get the form
         res = self.testapp.get('/', status=200)
+        self.failUnless('Hello Form' in res.body)
+
+    def test_valid_POST(self):
+        # Get the form
+        res = self.testapp.get('/', status=200)
+        self.failUnless('Hello Form' in res.body)
+        form = res.form
+        form['name'] = 'bobo'
+        form['shoe_size'] = 22
+        complete = form.submit()
+        # XXX
+        #self.failUnless('Valid form values' in complete.body)
+
+    def test_invalid_POST(self):
+        # Get the form
+        res = self.testapp.get('/', status=200)
+        form = res.form
+        # XXX Copy from above, but fixed
         self.failUnless('Hello Form' in res.body)
