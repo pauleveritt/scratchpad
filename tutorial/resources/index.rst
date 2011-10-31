@@ -44,3 +44,5 @@ Contents
    step01/index
    step02/index
    step03/index
+   step04/index
+   step05/index
