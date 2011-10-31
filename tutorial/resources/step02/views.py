@@ -7,6 +7,7 @@ class ProjectorViews(object):
 
     @view_config(renderer="templates/default_view.pt")
     def default_view(self):
+        # XXX Might be done more cleanly
         parent = self.context.__parent__
         if parent:
             parent_title = parent.title

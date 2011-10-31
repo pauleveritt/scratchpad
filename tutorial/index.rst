@@ -34,3 +34,4 @@ Contents
     setup
     creatingux/index
     resources/index
+    forms_schemas/index

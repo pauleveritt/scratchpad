@@ -30,4 +30,5 @@ Contents
 
   - Console scripts
 
-- PyCharm
+- PyCharm, debugtoolbar
+

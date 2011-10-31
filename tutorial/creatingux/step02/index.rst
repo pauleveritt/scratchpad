@@ -62,6 +62,8 @@ Extra Credit
 
 #. Did WebTest really launch an HTTP server and issue an HTTP request?
 
+#. If your code generates an error, will Pyramid handle it gracefully?
+
 Analysis
 ========
 

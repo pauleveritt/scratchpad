@@ -58,6 +58,8 @@ Extra Credit
    Kill your ``python application.py`` and restart,
    then reload your browser. See the exception in the console?
 
+#. Does Pyramid support automatic reloading of Python code?
+
 Analysis
 ========
 
@@ -65,9 +67,8 @@ This single-file module does quite a bit for so few lines,
 thus making it spiritually similar to microframeworks. A view function
 is added to the configuration. When called, the view returns a response.
 
-
-Open Discussion
-===============
+Discussion
+==========
 
 - Background on megaframeworks, microframeworks, and Pyramid's opinion
   thereof

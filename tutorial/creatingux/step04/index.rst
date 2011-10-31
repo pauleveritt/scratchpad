@@ -92,6 +92,8 @@ Extra Credit
 
 #. Will the WebTest correctly trigger that error?
 
+#. Does ending your URLs in ``.html`` have any effect?
+
 Analysis
 ========
 
