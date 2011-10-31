@@ -1,7 +1,5 @@
 from random import randint
 
-import transaction
-
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 from pyramid.view import view_config
@@ -44,7 +42,6 @@ class ProjectorViews(object):
             new_folder.__name__ = name
             new_folder.__parent__ = self.context
             self.context[name] = new_folder
-            transaction.commit()
             # Redirect to the new folder
             url = self.request.resource_url(new_folder)
             return HTTPFound(location=url)
@@ -63,7 +60,6 @@ class ProjectorViews(object):
             new_document.__name__ = name
             new_document.__parent__ = self.context
             self.context[name] = new_document
-            transaction.commit()
             # Redirect to the new document
             url = self.request.resource_url(new_document)
             return HTTPFound(location=url)

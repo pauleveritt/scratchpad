@@ -11,6 +11,7 @@ def main():
     settings = {"zodbconn.uri": "file://Data.fs"}
     config = Configurator(root_factory=root_factory, settings=settings)
     config.include("pyramid_zodbconn")
+    config.include("pyramid_tm")
     config.add_static_view('static', 'deform:static')
     config.scan("views")
     app = config.make_wsgi_app()

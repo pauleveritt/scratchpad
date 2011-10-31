@@ -23,6 +23,4 @@ def bootstrap(zodb_root):
     if not 'projector' in zodb_root:
         root = SiteFolder('Projector Site')
         zodb_root['projector'] = root
-        import transaction
-        transaction.commit()
     return zodb_root['projector']
