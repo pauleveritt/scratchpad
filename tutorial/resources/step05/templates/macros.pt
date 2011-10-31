@@ -8,12 +8,24 @@
 </head>
 <body>
 <metal:company_menu define-macro="company_menu">
-    <ul id="company_menu">
-        <li>Projects: </li>
-        <li tal:repeat="project projects">
-            <a href="${project.name}">${project.title}</a>
+    <ul tal:condition="view.company" id="company_menu">
+        <li>Projects:</li>
+        <li tal:repeat="child view.company.values()">
+            <a href="${view.request.resource_url(child)}">${child.title}</a>
         </li>
     </ul>
 </metal:company_menu>
+<metal:children_listing define-macro="children_listing">
+    <tal:block condition="view.context.values() == []">
+        <em>No items.</em>
+    </tal:block>
+    <tal:block condition="view.context.values() != []">
+        <ul>
+            <li tal:repeat="child view.context.values()">
+                <a href="${view.request.resource_url(child)}">${child.title}</a>
+            </li>
+        </ul>
+    </tal:block>
+</metal:children_listing>
 </body>
 </html>

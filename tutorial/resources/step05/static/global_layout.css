@@ -47,3 +47,10 @@ body {
 #sidebar p {
     text-align: center;
 }
+
+#message {
+    background-color: yellow;
+    text-align: center;
+    width: 100px;
+    margin-left: 100px;
+}

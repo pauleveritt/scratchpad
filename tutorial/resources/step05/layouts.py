@@ -1,19 +1,15 @@
-from pyramid.renderers import get_renderer
 from pyramid.decorator import reify
+from pyramid.location import lineage
+from pyramid.renderers import get_renderer
 
-from dummy_data import COMPANY
-from dummy_data import SITE_MENU
+from resources import Company
+from resources import Site
 
 class Layouts(object):
-
     @reify
     def global_template(self):
         renderer = get_renderer("templates/global_layout.pt")
         return renderer.implementation().macros['layout']
-
-    @reify
-    def company_name(self):
-        return COMPANY
 
     @reify
     def global_macros(self):
@@ -21,17 +17,30 @@ class Layouts(object):
         return renderer.implementation().macros
 
     @reify
+    def site(self):
+        # From somewhere deep in hierarchy, reach up and grab site
+        for l in lineage(self.context):
+            if isinstance(l, Site):
+                return l
+        return None
+
+    @reify
+    def company(self):
+        # From somewhere deep in hierarchy, reach up and grab company
+        for l in lineage(self.context):
+            if isinstance(l, Company):
+                return l
+        return None
+
+    @reify
+    def message(self):
+        return self.request.GET.get('msg', None)
+
+    @reify
     def site_menu(self):
-        new_menu = SITE_MENU[:]
-        url = self.request.url
-        for menu in new_menu:
-            # TODO XXX This breaks on root
-            if url.endswith(menu['href']):
-                menu['current'] = True
-            else:
-                menu['current'] = False
-                # Double-check for Home
-            if menu['title'] == "Home" and url.endswith(".html"):
-                menu['current'] = False
-        return SITE_MENU
+        new_menu = []
+        for c in [self.site,] + self.site.values():
+            url = self.request.resource_url(c)
+            new_menu.append({'href': url, 'title': c.title})
+        return new_menu
 

@@ -76,7 +76,7 @@ Steps
    ``step10/templates/macros.pt``:
 
    .. literalinclude:: templates/macros.pt
-      :language: html
+      :language: xml
       :linenos:
 
 #. Copy the following into ``step10/templates/index.pt``:
