@@ -49,12 +49,6 @@ Steps
    .. literalinclude:: resources.py
       :linenos:
 
-#. Copy the following into ``step02/templates/index.pt``:
-
-   .. literalinclude:: templates/index.pt
-      :language: html
-      :linenos:
-
 #. Copy the following into ``step02/templates/default_view.pt``:
 
    .. literalinclude:: templates/default_view.pt
@@ -74,6 +68,9 @@ Steps
 
 Extra Credit
 ============
+
+#. In ``resources.py``, we moved the instantiation of ``root`` out to
+   global scope. Why?
 
 #. If you go to a resource that doesn't exist, will Pyramid handle it
    gracefully?
