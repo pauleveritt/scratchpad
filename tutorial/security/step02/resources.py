@@ -9,7 +9,7 @@ class Folder(dict):
 
 
 class SiteFolder(Folder):
-    __acl__ = [(Allow, Everyone, 'view')]
+    __acl__ = [(Allow, 'group:editors', 'edit')]
 
 class Document(object):
     def __init__(self, name, parent, title):
