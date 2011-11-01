@@ -105,7 +105,7 @@ Extra Credit
 
 #. What exactly does ``@reify`` do?
 
-#. Could you shorten your unit tests by having making a ``DummyRequest
+#. Could you shorten your unit tests by making a ``DummyRequest
    ()`` in the test's ``__init__``?
 
 #. If you do an expensive calculation for one view,

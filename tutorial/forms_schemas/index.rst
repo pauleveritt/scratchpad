@@ -4,7 +4,7 @@ Forms and Schemas with Deform and Colander
 
 Automatic forms with validation are an important part of any web
 framework. This series provides a gentle introduction into Deform,
-a popular form system for Pyramid.
+a popular form system from the Pylons project.
 
 Goals
 =====
