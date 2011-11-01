@@ -1,8 +1,8 @@
-=========================================
-Step 08: CSS and JS With Static Resources
-=========================================
+======================================
+Step 08: CSS and JS With Static Assets
+======================================
 
-Web applications include many static resources in the UX: CSS and JS
+Web applications include many static assets in the UX: CSS and JS
 files, images, etc. Web frameworks need to support productive
 development by the UX team, but also the richness and complexity
 required by the core developers and the deployment team.
@@ -10,12 +10,12 @@ required by the core developers and the deployment team.
 It's a surprisingly hard problem, supporting all these needs while
 keeping the simple case easy.
 
-Pyramid accomplishes this using the view machinery and static resources.
+Pyramid accomplishes this using the view machinery and static assets.
 
 Goals
 =====
 
-- Show Pyramid's support for static resources
+- Show Pyramid's support for static assets
 
 Objectives
 ==========
@@ -111,7 +111,7 @@ Analysis
 
 Being able to point your Pyramid app at an entire directory and publish
 it is a boon for quick development. We grabbed the ``configurator``
-and, with one line, published a directory of resources. No need to
+and, with one line, published a directory of assets. No need to
 individually publish each file and set mime-type.
 
 Setting expires headers is a fiddly part of the development cycle.

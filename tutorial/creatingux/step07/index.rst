@@ -132,6 +132,8 @@ Discussion
 
 - Is such a pattern really needed?
 
+- What are some other, previous "Template API" ideas?
+
 - Would a UX developer want to know that a property came from the
   layout instead of the view?
 
