@@ -36,7 +36,7 @@ Steps
 
 #. ``$ virtualenv --no-site-packages venv``
 
-#. ``$ export PATH=/path/to/tutorial_workspace/bin:$PATH``
+#. ``$ export PATH=/path/to/tutorial_workspace/venv/bin:$PATH``
 
 #. ``$ which easy_install``
 
