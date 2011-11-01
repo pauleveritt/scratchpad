@@ -27,20 +27,3 @@ class ProjectorFunctionalTests(unittest.TestCase):
         res = self.testapp.get('/', status=200)
         self.failUnless('Hello Form' in res.body)
 
-    def test_valid_POST(self):
-        # Get the form
-        res = self.testapp.get('/', status=200)
-        self.failUnless('Hello Form' in res.body)
-        form = res.form
-        form['name'] = 'bobo'
-        form['shoe_size'] = 22
-        complete = form.submit()
-        # XXX
-        #self.failUnless('Valid form values' in complete.body)
-
-    def test_invalid_POST(self):
-        # Get the form
-        res = self.testapp.get('/', status=200)
-        form = res.form
-        # XXX Copy from above, but fixed
-        self.failUnless('Hello Form' in res.body)

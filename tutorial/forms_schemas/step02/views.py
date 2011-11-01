@@ -34,6 +34,5 @@ class ProjectorViews(object):
             return {"form": myform.render(), "values": values}
 
         # We are a GET not a POST
-        values = None
-        return {"form": myform.render(), "values": values}
+        return {"form": myform.render(), "values": None}
 

@@ -28,10 +28,14 @@ Objectives
 
 - Add a static view for Deform's static resources
 
+- Include those resources (CSS, JS) in the template's ``<head>``
+
 - Define a basic schema
 
 Steps
 =====
+
+#. ``easy_install deform``
 
 #. ``$ cd ../../forms_schema; mkdir step01; cd step01``
 
@@ -56,7 +60,7 @@ Steps
    .. literalinclude:: tests.py
       :linenos:
 
-#. ``$ nosetests`` should report running 6 tests.
+#. ``$ nosetests`` should report running 2 tests.
 
 #. ``$ python application.py``
 
