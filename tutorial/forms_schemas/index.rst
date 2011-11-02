@@ -25,4 +25,3 @@ Contents
 
    step01/index
    step02/index
-   step03/index
