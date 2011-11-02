@@ -36,3 +36,5 @@ Contents
     resources/index
     forms_schemas/index
     security/index
+    zodb/index
+
