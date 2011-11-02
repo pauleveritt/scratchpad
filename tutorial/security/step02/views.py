@@ -5,22 +5,24 @@ from pyramid.httpexceptions import HTTPForbidden
 from pyramid.security import remember
 from pyramid.security import forget
 
-USERS = {'editor': 'editor',
-         'viewer': 'viewer'}
-GROUPS = {'editor': ['group:editors']}
-
-def groupfinder(userid, request):
-    if userid in USERS:
-        return GROUPS.get(userid, [])
+# Get our database that manages users
+from usersdb import USERS
 
 class ProjectorViews(object):
     def __init__(self, context, request):
         self.context = context
         self.request = request
 
-    @view_config(renderer="templates/default_view.pt", permission='edit')
+    @view_config(renderer="templates/default_view.pt",
+                 permission='view')
     def default_view(self):
-        return dict(page_title="Security")
+        return dict(page_title="Site View")
+
+    @view_config(renderer="templates/default_view.pt",
+                 permission='edit',
+                 name="edit")
+    def edit_view(self):
+        return dict(page_title="Edit Site")
 
     @view_config(renderer="templates/login.pt", context=HTTPForbidden)
     @view_config(renderer="templates/login.pt", name="login.html")

@@ -4,15 +4,11 @@ from pyramid.authentication import AuthTktAuthenticationPolicy
 
 from resources import bootstrap
 
-from usersdb import groupfinder
-
 def main():
     config = Configurator(
         root_factory=bootstrap,
-        authentication_policy=AuthTktAuthenticationPolicy(
-            'seekr1t',
-            callback=groupfinder)
-    )
+        authentication_policy=AuthTktAuthenticationPolicy('seekr1t'),
+        )
     config.scan("views")
     app = config.make_wsgi_app()
     return app

@@ -10,6 +10,6 @@
 
 <p>This is the home page, only visible to <code>group:editors</code></p>
 
-<p><a href="edit">Edit</a> | <a href="/logout.html">Logout</a></p>
+<p><a href="/">Site Root</a> | <a href="/edit">Edit</a></p>
 </body>
 </html>

@@ -35,3 +35,4 @@ Contents
     creatingux/index
     resources/index
     forms_schemas/index
+    security/index
