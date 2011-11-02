@@ -1,5 +1,3 @@
-from random import randint
-
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 from pyramid.traversal import resource_path
