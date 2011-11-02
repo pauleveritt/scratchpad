@@ -28,7 +28,7 @@ Steps
 
 #. ``$ cd ../../resources; mkdir step01; cd step01``
 
-#. (Unchanged) Copy the following into ``step01/application.py``:
+#. Copy the following into ``step01/application.py``:
 
    .. literalinclude:: application.py
       :linenos:
@@ -76,7 +76,7 @@ of the tree.
 In this step, our tree has one object: the root. It is an instance of
 ``SiteFolder``. Since it is the root, it doesn't need a ``__name__``
 (aka ``id``) nor a ``__parent__`` (reference to the container an object
- is in.)
+is in.)
 
 Our ``site_view`` is passed, by Pyramid, the instance of this folder as
 ``context``. The view can then grab attributes and other data from the

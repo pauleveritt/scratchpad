@@ -1,6 +1,6 @@
-=============
-Form Handling
-=============
+======================
+Step 02: Form Handling
+======================
 
 The previous step was the smallest possible step into a Colander schema
 and Deform form based on that schema. Let's take another very small

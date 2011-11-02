@@ -2,7 +2,7 @@
 Resources, Hierarchies, and Traversal
 =====================================
 
-Web applications have URLs with locate data and make operations on that
+Web applications have URLs which locate data and make operations on that
 data. Pyramid supports two ways of mapping URLs into Python operations:
 
 - The more-traditional approach of *URL dispatch* aka *routes*
