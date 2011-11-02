@@ -2,7 +2,6 @@ from random import randint
 
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
-from pyramid.view import view_config
 
 import colander
 from deform import Form

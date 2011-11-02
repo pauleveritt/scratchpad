@@ -1,6 +1,6 @@
 from persistent import Persistent
 from persistent.mapping import PersistentMapping
-
+import transaction
 
 class Folder(PersistentMapping):
     def __init__(self, title):
@@ -23,4 +23,5 @@ def bootstrap(zodb_root):
     if not 'projector' in zodb_root:
         root = SiteFolder('Projector Site')
         zodb_root['projector'] = root
+        transaction.commit()
     return zodb_root['projector']
