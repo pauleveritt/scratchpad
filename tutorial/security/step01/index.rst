@@ -1,5 +1,5 @@
 =============================
-Step 02: Hello World for ACLs
+Step 01: Hello World for ACLs
 =============================
 
 Pyramid resources are protected with security statements called *access
