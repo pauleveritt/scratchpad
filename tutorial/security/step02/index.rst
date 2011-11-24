@@ -27,7 +27,7 @@ Steps
 
 #. ``$ cd ../../security; mkdir step02; cd step02``
 
-#. (Unchanged) Copy the following into ``step02/application.py``:
+#. Copy the following into ``step02/application.py``:
 
    .. literalinclude:: application.py
       :linenos:

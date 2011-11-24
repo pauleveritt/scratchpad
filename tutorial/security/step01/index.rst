@@ -6,7 +6,7 @@ Pyramid resources are protected with security statements called *access
 control lists* (or ACLs.) This is a familiar security concept,
 in which you state::
 
-  (Action, Principal, Permission)
+  [(Action, Principal, Permission),]
 
 ...where action is either ``Allow`` or ``Deny``.
 

@@ -7,6 +7,7 @@ from pyramid.security import forget
 
 # Get our database that manages users
 from usersdb import USERS
+from pyramid.security import has_permission
 
 class ProjectorViews(object):
     def __init__(self, context, request):
@@ -16,7 +17,10 @@ class ProjectorViews(object):
     @view_config(renderer="templates/default_view.pt",
                  permission='view')
     def default_view(self):
-        return dict(page_title="Site View")
+        can_i_edit = has_permission("edit", self.context,
+                                    self.request)
+        return dict(page_title="Site View",
+                    can_i_edit=can_i_edit)
 
     @view_config(renderer="templates/default_view.pt",
                  permission='edit',

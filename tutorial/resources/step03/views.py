@@ -4,7 +4,6 @@ from resources import SiteFolder
 from resources import Folder
 from resources import Document
 
-
 class ProjectorViews(object):
     def __init__(self, context, request):
         self.context = context

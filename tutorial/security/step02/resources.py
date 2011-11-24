@@ -23,6 +23,8 @@ class Document(object):
 
 root = SiteFolder('', None, 'Projector Site')
 
+from pyramid.security import DENY_ALL
+
 def bootstrap(request):
     # Let's make:
     # /
@@ -33,6 +35,11 @@ def bootstrap(request):
     doc1 = Document('doc1', root, 'Document 01')
     root['doc1'] = doc1
     doc2 = Document('doc2', root, 'Document 02')
+    doc2.__acl__ = [
+        (Allow, Everyone, 'view'),
+        (Allow, 'group:admin', 'edit'),
+        DENY_ALL
+    ]
     root['doc2'] = doc2
     folder1 = Folder('folder1', root, 'Folder 01')
     root['folder1'] = folder1

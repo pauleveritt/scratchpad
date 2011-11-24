@@ -36,7 +36,7 @@ Steps
 
 #. ``mkdir zodb``
 
-#. (Unchanged) Copy the following into ``zodb/application.py``:
+#. Copy the following into ``zodb/application.py``:
 
    .. literalinclude:: application.py
       :linenos:
