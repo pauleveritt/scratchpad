@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+
 Base = declarative_base()
 
 class User(Base):
@@ -20,3 +21,8 @@ class User(Base):
         return "<User('%s','%s', '%s')>" % (
             self.name, self.fullname, self.password)
 
+all_users = [
+    User('wendy', 'Wendy Williams', 'foobar'),
+    User('mary', 'Mary Contrary', 'xxg527'),
+    User('fred', 'Fred Flinstone', 'blah'),
+    ]
