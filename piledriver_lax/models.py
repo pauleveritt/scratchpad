@@ -19,8 +19,9 @@ class Guardian(Base):
         self.sla_rid = sla_rid
 
     def __repr__(self):
-        fmt = "Guardian(%r, %r)"
-        return fmt % (self.first_name, self.last_name)
+        fmt = "Guardian(%r, %r, %r players)"
+        c = len(self.players)
+        return fmt % (self.first_name, self.last_name, c)
 
 
 class Player(Base):
@@ -40,8 +41,9 @@ class Player(Base):
         self.sla_rid = sla_rid
 
     def __repr__(self):
-        fmt = "Player(%r, %r)"
-        return fmt % (self.first_name, self.last_name)
+        fmt = "Player(%r, %r, %r)"
+        guardian_first = self.guardian.first_name
+        return fmt % (self.first_name, self.last_name, guardian_first)
 
 all_guardians = [
     Guardian('Paul', 'Everitt', 12),
