@@ -3,10 +3,10 @@ from time import time
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from models import Base
-from models import Address
-from models import User
-from models import all_users
+from piledriver_lax.models import Base
+from piledriver_lax.models import Address
+from piledriver_lax.models import User
+from piledriver_lax.models import all_users
 
 def main():
     engine = create_engine('sqlite:///:memory:')
