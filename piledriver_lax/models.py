@@ -5,41 +5,46 @@ from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
-class User(Base):
-    __tablename__ = 'users'
+class Guardian(Base):
+    __tablename__ = 'guardians'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    fullname = Column(String)
-    password = Column(String)
+    first_name = Column(String)
+    last_name = Column(String)
+    sla_rid = Column(Integer)
 
-    def __init__(self, name, fullname, password):
-        self.name = name
-
-        self.fullname = fullname
-        self.password = password
+    def __init__(self, first_name, last_name, sla_rid):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.sla_rid = sla_rid
 
     def __repr__(self):
-        return "<User('%s','%s', '%s')>" % (
-            self.name, self.fullname, self.password)
+        fmt = "Guardian(%r, %r)"
+        return fmt % (self.first_name, self.last_name)
 
-class Address(Base):
-    __tablename__ = 'addresses'
+
+class Player(Base):
+    __tablename__ = 'players'
     id = Column(Integer, primary_key=True)
-    email_address = Column(String, nullable=False)
-    user_id = Column(Integer, ForeignKey('users.id'))
+    first_name = Column(String)
+    last_name = Column(String)
+    sla_rid = Column(Integer)
 
-    user = relationship("User", backref=backref('addresses', order_by=id))
+    guardian_id = Column(Integer, ForeignKey('guardians.id'))
 
-    def __init__(self, email_address):
-        self.email_address = email_address
+    guardian = relationship("Guardian", backref=backref('players', order_by=id))
+
+    def __init__(self, first_name, last_name, sla_rid):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.sla_rid = sla_rid
 
     def __repr__(self):
-        return "<Address('%s')>" % self.email_address
+        fmt = "Player(%r, %r)"
+        return fmt % (self.first_name, self.last_name)
 
-
-all_users = [
-    User('wendy', 'Wendy Williams', 'foobar'),
-    User('mary', 'Mary Contrary', 'xxg527'),
-    User('fred', 'Fred Flinstone', 'blah'),
+all_guardians = [
+    Guardian('Paul', 'Everitt', 12),
+    Guardian('Stacey', 'Smith', 34),
+    Guardian('Jim', 'Harrel', 56),
     ]

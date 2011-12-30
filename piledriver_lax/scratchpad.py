@@ -4,9 +4,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from piledriver_lax.models import Base
-from piledriver_lax.models import Address
-from piledriver_lax.models import User
-from piledriver_lax.models import all_users
+from piledriver_lax.models import Guardian
+from piledriver_lax.models import Player
+from piledriver_lax.models import all_guardians
 
 def main():
     engine = create_engine('sqlite:///:memory:')
@@ -17,17 +17,18 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    ed_user = User('ed', 'Ed Jones', 'edspassword')
-    session.add(ed_user)
-    session.add_all(all_users)
+    session.add_all(all_guardians)
     session.commit()
 
-    jack = User('jack', 'Jack Bean', 'gjffdd')
-    jack.addresses = [
-        Address(email_address='jack@google.com'),
-        Address(email_address='j25@yahoo.com')]
-    session.add(jack)
+    kirsten = Guardian('Kirsten', 'Baylor', 99)
+    kirsten.players = [
+        Player('Kennedy', 'Baylor', 87),
+        Player('Kayla', 'Baylor', 52),
+        ]
+    session.add(kirsten)
     session.commit()
+
+    print(kirsten.players)
 
     print("Elapsed time:", time() - start)
 
