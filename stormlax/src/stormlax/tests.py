@@ -27,10 +27,9 @@ class StormlaxViewsUnitTests(unittest.TestCase):
 class StormlaxFunctionalTests(unittest.TestCase):
     def setUp(self):
         from stormlax import main
-        d = '/Users/paul/projects/scratchpad/stormlax/var/import'
+        d = '/Users/paul/projects/scratchpad/stormlax/var'
         config = {}
-        settings = dict(import_dir=d)
-        app = main(config, import_dir=d)
+        app = main(config, var_dir=d)
         from webtest import TestApp
         self.testapp = TestApp(app)
 

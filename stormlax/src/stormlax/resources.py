@@ -10,23 +10,42 @@ class SiteFolder(dict):
         self.title = title
         self._imported_csv = None
 
-    def bootstrap(self, import_dir):
+    def bootstrap(self, var_dir):
         if self._imported_csv is not None:
             # Skip this if we have already loaded the data
             return
 
         # Setup
         self._imported_csv = dict(
-            players={}, adults={}, tournaments={}
+            players={}, adults={}, registrations={}
             )
 
         # Players
-        players_fn = join(import_dir, 'players.csv')
+        players_fn = join(var_dir, 'players.csv')
         for player_row in DictReader(open(players_fn)):
             player = Player(player_row)
             self._imported_csv['players'][player.id] = player
 
-class BasePerson:
+
+        # Adults
+        adults_fn = join(var_dir, 'adults.csv')
+        for adult_row in DictReader(open(adults_fn)):
+            adult = Adult(adult_row)
+            self._imported_csv['adults'][adult.id] = adult
+
+        # Registrations
+        registrations_fn = join(var_dir, 'registrations.csv')
+        for registration_row in DictReader(open(registrations_fn)):
+            registration = Registration(registration_row)
+            self._imported_csv['registrations'][registration.id] = registration
+
+class BaseResource:
+    def csv_load(self, csv_data):
+        for k,v in csv_data.items():
+            setattr(self, k, v)
+        self.id = int(self.id)
+
+class BasePerson(BaseResource):
     id = None
     last_name = None
     first_name = None
@@ -34,10 +53,6 @@ class BasePerson:
     mobile_phone = None
     note = None
 
-    def csv_load(self, csv_data):
-        for k,v in csv_data.items():
-            setattr(self, k, v)
-        self.id = int(self.id)
 
 class Player(BasePerson):
     guardian_ref = None
@@ -53,6 +68,11 @@ class Player(BasePerson):
         self.csv_load(csv_data)
 
 class Adult(BasePerson):
+    address_1 = None
+    address_2 = None
+    city = None
+    state = None
+    zip = None
     other_emails = []
     home_phone = None
     mobile_phone = None
@@ -63,12 +83,13 @@ class Adult(BasePerson):
     def __init__(self, csv_data):
         self.csv_load(csv_data)
 
-class Registration:
+class Registration(BaseResource):
     id = None
     player_ref = None
+    full_name = None
     event_ref = None
     status = 0
-    paid = None
+    balance = None
     note = None
 
     statuses = {

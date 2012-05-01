@@ -10,6 +10,6 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.scan()
     from resources import root
-    root.bootstrap(settings['import_dir'])
+    root.bootstrap(settings['var_dir'])
 
     return config.make_wsgi_app()
