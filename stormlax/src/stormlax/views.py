@@ -1,6 +1,14 @@
+from os import listdir
+
 from pyramid.view import view_config
 
-@view_config(renderer="templates/site_index.pt")
-def siteindex_view(request):
-    return {}
+from layout import Layouts
 
+class StormlaxViews(Layouts):
+
+    def __init__(self, request):
+        self.request = request
+
+    @view_config(renderer="templates/siteindex.pt")
+    def siteindex_view(self):
+        return {"page_title": "Home"}

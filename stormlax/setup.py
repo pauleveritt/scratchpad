@@ -6,6 +6,9 @@ import sys
 requires = [
     'pyramid',
     'setuptools',
+    'nose',
+    'WebTest',
+    'waitress',
     ]
 
 if sys.version_info[:2] < (2, 7):
