@@ -1,5 +1,17 @@
 <div metal:use-macro="view.global_template">
     <div metal:fill-slot="content">
-        <p>Home page content goes here.</p>
+        <h1>${page_title}</h1>
+        <p>This <em>STORM Dashboard</em> makes STORM leadership,
+            coaches, and team managers more productive by focusing
+            on the primary tasks to make an effective travel club:</p>
+        <ul>
+            <li>See rosters (coaches, managers, goalies,
+                players) for each team</li>
+            <li>Player and parent contact information</li>
+            <li>For each team, who has/hasn't registered/paid for
+                which tournaments</li>
+            <li>Easily send an email to each team, or copy the list
+                of email addresses</li>
+        </ul>
     </div>
 </div>

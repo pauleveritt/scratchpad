@@ -11,3 +11,19 @@ class Layouts(object):
     @reify
     def project_name(self):
         return 'STORM Dashboard'
+
+    @reify
+    def site_root(self):
+        return self.request.root
+
+    @reify
+    def site_nav(self):
+        results = list(self.request.root.rosters)
+        name = self.request.context.__name__
+        for result in results:
+            if result['id'] == name:
+                result['active'] = 'active'
+            else:
+                result['active'] = ''
+
+        return results

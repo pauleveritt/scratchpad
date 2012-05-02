@@ -1,16 +1,26 @@
 from csv import DictReader
-from os import listdir
 from os.path import join
 
 class SiteFolder(dict):
     __name__ = ''
     __parent__ = None
 
-    def __init__(self, title):
+    def __init__(self, name, parent, title):
+        self.__name__ = name
+        self.__parent__ = parent
         self.title = title
         self._imported_csv = None
 
     def bootstrap(self, var_dir):
+
+        # Make some rosters
+        self['blue'] = Roster('blue', root, 'Blue')
+        self['orange'] = Roster('orange', root, 'Orange')
+        self['white'] = Roster('white', root, 'White')
+        self['black'] = Roster('black', root, 'Black')
+        self['silver'] = Roster('silver', root, 'Silver')
+
+        # Load some CSV data
         if self._imported_csv is not None:
             # Skip this if we have already loaded the data
             return
@@ -38,6 +48,16 @@ class SiteFolder(dict):
         for registration_row in DictReader(open(registrations_fn)):
             registration = Registration(registration_row)
             self._imported_csv['registrations'][registration.id] = registration
+
+    @property
+    def rosters(self):
+        return [
+            dict(title='Blue', id='blue'),
+            dict(title='Orange', id='orange'),
+            dict(title='White', id='white'),
+            dict(title='Black', id='black'),
+            dict(title='Silver', id='silver'),
+        ]
 
 class BaseResource:
     def csv_load(self, csv_data):
@@ -103,12 +123,23 @@ class Registration(BaseResource):
     def __init__(self, csv_data):
         self.csv_load(csv_data)
 
+class Roster:
+    __name__ = ''
+    __parent__ = None
+
+    id = None
+    title = None
+
+    def __init__(self, name, parent, title):
+        self.__name__ = name
+        self.__parent__ = parent
+        self.id = name
+        self.title = title
 
 try:
     root
 except NameError:
-    root = SiteFolder('STORM Dashboard')
+    root = SiteFolder('', None, 'STORM Dashboard')
 
 def root_factory(request):
-    print('in root factory')
     return root

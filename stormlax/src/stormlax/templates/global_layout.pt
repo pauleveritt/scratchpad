@@ -5,12 +5,93 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       metal:define-macro="layout">
 <head>
+    <meta charset="utf-8">
     <title>${view.project_name} - ${page_title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"
+          rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+
+    </style>
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css"
+          rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon"
+          href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed"
+          href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <body>
-<h1>${page_title}</h1>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse"
+               data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">STORM</a>
 
-<div metal:define-slot="content">
+            <div class="nav-collapse">
+                <ul id="top-nav" class="nav">
+                    <li tal:repeat="gi view.site_nav"
+                            class="${gi.active}">
+                        <a href="${gi.id}">${gi.title}</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
 </div>
+
+
+<div class="container">
+    <ul class="teamframe-nav nav nav-tabs" tal:condition="subnav|None">
+        <li class="active"><a href="#${roster.team_name}-roster"
+               data-toggle="pill">Roster</a></li>
+        <li><a href="#${roster.team_name}-tournaments"
+               data-toggle="pill">Tournaments</a></li>
+        <li><a href="#${roster.team_name}-contacts"
+               data-toggle="pill">Contact Info</a></li>
+        <li><a href="#${roster.team_name}-emails"
+               data-toggle="pill">Master Email List</a></li>
+    </ul>
+    <div style="margin-top: 2em">
+        <div metal:define-slot="content">
+        </div>
+    </div>
+</div>
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+
+
 </body>
 </html>
